@@ -12,13 +12,28 @@ import Industries from '../components/home/Industries.jsx'
 import TeamSection from '../components/home/TeamSection.jsx'
 import FaqSection from '../components/home/FaqSection.jsx'
 import Cta from '../components/home/Cta.jsx'
+import IdeaBanner from "../components/home/IdeaBanner.jsx";
 
 export default function Home() {
   usePageTitle()
   return (
     <>
-      <Hero /><ClientsStrip /><TechMarquee /><WhatWeDo /><ServicesShowcase /><PartnerNetwork /><FeaturedWork />
-      <Stats /><AcademySection /><Industries /><TeamSection /><FaqSection /><Cta />
+      <Hero />
+      <ClientsStrip />
+      <TechMarquee />
+      <WhatWeDo />
+      <ServicesShowcase />
+      <PartnerNetwork />
+      <FeaturedWork />
+      <Stats />
+      <AcademySection />
+      <Industries />
+      <Industries />
+      <IdeaBanner />
+      <TeamSection />
+      <TeamSection />
+      <FaqSection />
+      <Cta />
     </>
-  )
+  );
 }
