@@ -51,7 +51,7 @@ export default function AdPopup() {
                   <motion.div key={i} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.2 }}>
                     <h2 className="font-display text-2xl font-extrabold leading-tight text-slate-900 sm:text-3xl">{s.title}</h2>
                     <ul className="mt-5 space-y-3">{s.points.map((p) => <li key={p} className="flex gap-2"><Check size={18} className="mt-0.5 shrink-0 text-brand" />{p}</li>)}</ul>
-                    <Button to={s.to} variant="dark" className="mt-7 w-full sm:w-auto" onClick={close}>{s.cta}</Button>
+                    <Button {...(s.href ? { href: s.href } : { to: s.to })} variant="dark" className="mt-7 w-full sm:w-auto" onClick={close}>{s.cta}</Button>
                   </motion.div>
                 </AnimatePresence>
                 <div className="mt-7 flex items-center justify-between border-t border-slate-200 pt-4 text-sm">

@@ -49,6 +49,6 @@ export const milestones = [
   { when: '2012 – 2021', title: 'Operations & transformation', desc: 'Led operations and digital transformation: automating workflows, managing compliance and delivering projects on time and on budget.' },
   { when: '2021', title: 'Move into engineering', desc: 'Moved into full-stack engineering and cybersecurity, shipping production applications and secure development practices.' },
   { when: 'Teaching', title: 'Training the next generation', desc: 'Designed and delivered software and cybersecurity curriculum to 100+ students with an 85% completion rate.' },
-  { when: 'Today', title: 'Saabi Solutions', desc: 'A company that brings engineering, security, IT delivery and tech education together under one roof.' },
+  { when: 'Today', title: 'Kliqq', desc: 'A company that brings engineering, security, IT delivery and tech education together under one roof.' },
 ]
 export const philosophy = 'Technology should reduce friction, speed up work and put better information in front of people when they need it. The goal is never to install more technology. It is to help your business and your people perform better because of it.'

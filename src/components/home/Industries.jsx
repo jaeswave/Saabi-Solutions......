@@ -20,9 +20,9 @@ function Grid() {
     </div>
   )
 }
-export default function Industries() {
+export default function Industries({ tone = 'mist' }) {
   return (
-    <Section tone="mist" eyebrow="Industries" title="Solutions that matter to real people" intro="Whatever your industry, we build the system that solves its specific problem.">
+    <Section tone={tone} eyebrow="Industries" title="Solutions that matter to real people" intro="Whatever your industry, we build the system that solves its specific problem.">
       <Grid />
     </Section>
   )

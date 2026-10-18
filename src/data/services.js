@@ -1,6 +1,6 @@
 import { Compass, Code2, Wrench, ShieldCheck, Cloud, LifeBuoy, ClipboardList, Package, GraduationCap, CreditCard, Landmark, Globe, Camera, Store, Network, Bot } from 'lucide-react'
 // Services = how we work across the technology lifecycle. Solutions = outcomes for specific needs.
-// partner: true => delivered through vetted partners that Saabi Solutions manages
+// partner: true => delivered through vetted partners that Kliqq manages
 export const services = [
   { icon: Compass, title: 'Plan & Consult', tagline: 'Choose the right technology before you spend a naira.', desc: 'Audits, roadmaps and vendor selection so every purchase fits your goals and budget.', points: ['Technology audits and roadmaps', 'Vendor and tool selection', 'Cost and risk planning'] },
   { icon: Code2, title: 'Build & Develop', tagline: 'Software built around how your business actually works.', desc: 'Websites, web apps, portals and APIs on React, Next.js, Node.js and PostgreSQL.', points: ['Websites and web applications', 'Custom portals, dashboards and APIs', 'Mobile apps with our partners'] },

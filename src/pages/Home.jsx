@@ -3,37 +3,20 @@ import Hero from '../components/home/Hero.jsx'
 import ClientsStrip from '../components/home/ClientsStrip.jsx'
 import TechMarquee from '../components/home/TechMarquee.jsx'
 import WhatWeDo from '../components/home/WhatWeDo.jsx'
-import ServicesShowcase from '../components/home/ServicesShowcase.jsx'
-import PartnerNetwork from '../components/home/PartnerNetwork.jsx'
+import ServicesTeaser from '../components/home/ServicesTeaser.jsx'
+import BuildSplit from '../components/home/BuildSplit.jsx'
 import FeaturedWork from '../components/home/FeaturedWork.jsx'
 import Stats from '../components/home/Stats.jsx'
-import AcademySection from '../components/home/AcademySection.jsx'
-import Industries from '../components/home/Industries.jsx'
-import TeamSection from '../components/home/TeamSection.jsx'
-import FaqSection from '../components/home/FaqSection.jsx'
+import SecuritySplit from '../components/home/SecuritySplit.jsx'
 import Cta from '../components/home/Cta.jsx'
-import IdeaBanner from "../components/home/IdeaBanner.jsx";
 
+// Landing page = overview only. Academy, Your Idea and About live on their own pages.
 export default function Home() {
   usePageTitle()
   return (
     <>
-      <Hero />
-      <ClientsStrip />
-      <TechMarquee />
-      <WhatWeDo />
-      <ServicesShowcase />
-      <PartnerNetwork />
-      <FeaturedWork />
-      <Stats />
-      <AcademySection />
-      <Industries />
-      <Industries />
-      <IdeaBanner />
-      <TeamSection />
-      <TeamSection />
-      <FaqSection />
-      <Cta />
+      <Hero /><ClientsStrip /><TechMarquee /><WhatWeDo /><ServicesTeaser /><BuildSplit />
+      <FeaturedWork /><Stats /><SecuritySplit /><Cta />
     </>
-  );
+  )
 }

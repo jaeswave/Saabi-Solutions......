@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-display font-bold text-white">Explore</h4>
-          <ul className="mt-4 space-y-2 text-sm">{site.nav.map((n) => <li key={n.to}><Link to={n.to} className="hover:text-white">{n.label}</Link></li>)}</ul>
+          <ul className="mt-4 space-y-2 text-sm">{[...site.nav, site.contact].map((n) => <li key={n.to}><Link to={n.to} className="hover:text-white">{n.label}</Link></li>)}</ul>
         </div>
         <div>
           <h4 className="font-display font-bold text-white">Contact</h4>

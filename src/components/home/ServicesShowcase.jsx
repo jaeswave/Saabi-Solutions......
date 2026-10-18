@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, Check } from 'lucide-react'
 import { services, solutions } from '../../data/services.js'
+import { waLink } from '../../config/site.js'
 import Section from '../ui/Section.jsx'
 import Button from '../ui/Button.jsx'
 import { useTone } from '../ui/ToneContext.js'
@@ -9,19 +10,21 @@ import { useTone } from '../ui/ToneContext.js'
 const tabs = { services, solutions }
 const pad = (n) => String(n).padStart(2, '0')
 
-function Explorer() {
+function Explorer({ kind }) {
   const t = useTone()
-  const [tab, setTab] = useState('services')
+  const [tab, setTab] = useState(kind || 'services')
   const [i, setI] = useState(0)
   const list = tabs[tab], item = list[i], Icon = item.icon
   return (
     <div className="grid gap-8 lg:grid-cols-5">
       <div className="lg:col-span-2">
-        <div className="mb-5 inline-flex rounded-full bg-slate-100 p-1">
-          {Object.keys(tabs).map((k) => (
-            <button key={k} onClick={() => { setTab(k); setI(0) }} className={`rounded-full px-6 py-2 text-sm font-semibold capitalize transition ${tab === k ? 'bg-ink text-white' : 'text-slate-600 hover:text-ink'}`}>{k}</button>
-          ))}
-        </div>
+        {!kind && (
+          <div className="mb-5 inline-flex rounded-full bg-slate-100 p-1">
+            {Object.keys(tabs).map((k) => (
+              <button key={k} onClick={() => { setTab(k); setI(0) }} className={`rounded-full px-6 py-2 text-sm font-semibold capitalize transition ${tab === k ? 'bg-ink text-white' : 'text-slate-600 hover:text-ink'}`}>{k}</button>
+            ))}
+          </div>
+        )}
         <ul className={`divide-y border-y ${t.line}`}>
           {list.map((s, n) => (
             <li key={s.title} className={t.line}>
@@ -49,7 +52,7 @@ function Explorer() {
               <p className="mt-2 text-slate-400">{item.desc}</p>
               <ul className="mt-6 space-y-2 text-sm">{item.points.map((p) => <li key={p} className="flex gap-2"><Check size={16} className="mt-0.5 shrink-0 text-aqua" />{p}</li>)}</ul>
               {item.partner && <p className="mt-6 inline-block rounded-full bg-white/10 px-3 py-1 text-xs text-slate-300">Delivered with vetted partners</p>}
-              <div className="mt-8"><Button to={`/contact?topic=${encodeURIComponent(item.title)}`} variant="white">Discuss this <ArrowRight size={16} /></Button></div>
+              <div className="mt-8"><Button href={waLink(`Hello Kliqq, I am interested in: ${item.title}.`)} variant="white">Discuss this <ArrowRight size={16} /></Button></div>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -57,10 +60,6 @@ function Explorer() {
     </div>
   )
 }
-export default function ServicesShowcase() {
-  return (
-    <Section id="services" tone="light" eyebrow="Services + Solutions" title="Every service, connected to an outcome" intro="Services are how we work across the technology lifecycle. Solutions are what that work delivers for your specific need.">
-      <Explorer />
-    </Section>
-  )
+export default function ServicesShowcase({ kind, eyebrow = 'Services + Solutions', title = 'Every service, connected to an outcome', intro = 'Services are how we work across the technology lifecycle. Solutions are what that work delivers for your specific need.' }) {
+  return <Section id={kind || 'services'} tone="light" eyebrow={eyebrow} title={title} intro={intro}><Explorer kind={kind} /></Section>
 }

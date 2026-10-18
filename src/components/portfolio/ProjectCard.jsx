@@ -7,7 +7,7 @@ import { useTone } from '../ui/ToneContext.js'
 export default function ProjectCard({ project, delay = 0 }) {
   const t = useTone()
   const [failed, setFailed] = useState(false)
-  const { name, url, desc, tags } = project
+  const { name, url, desc, tags, image } = project
   return (
     <Reveal className="h-full" delay={delay}>
       <a href={url} target="_blank" rel="noopener noreferrer" className="group block h-full">
@@ -17,7 +17,7 @@ export default function ProjectCard({ project, delay = 0 }) {
             <span className={`ml-3 truncate text-xs ${t.muted}`}>{url.replace(/^https?:\/\//, '')}</span>
           </div>
           <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-brand/30 to-aqua/20">
-            {!failed && <img loading="lazy" alt={`${name} preview`} src={`https://image.thum.io/get/width/800/crop/500/${url}`} onError={() => setFailed(true)}
+            {!failed && <img loading="lazy" alt={`${name} preview`} src={image || `https://image.thum.io/get/width/800/crop/500/${url}`} onError={() => setFailed(true)}
               className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />}
           </div>
           <div className="p-6">

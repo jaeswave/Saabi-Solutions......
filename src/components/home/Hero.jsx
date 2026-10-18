@@ -26,7 +26,7 @@ export default function Hero() {
         </p>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-400">From the first website to the secured network behind it, we design, deploy and support the systems your business runs on, and we train the next generation of tech talent.</p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Button to="/contact">Talk with Saabi <ArrowRight size={16} /></Button>
+          <Button to="/contact">Talk with Kliqq <ArrowRight size={16} /></Button>
           <Button to="/academy" variant="outline">Explore the Academy</Button>
         </div>
         <ul className="mt-14 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-400">

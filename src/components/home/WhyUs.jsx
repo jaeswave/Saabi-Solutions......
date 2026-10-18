@@ -22,7 +22,7 @@ function Grid() {
 }
 export default function WhyUs({ tone = 'light' }) {
   return (
-    <Section tone={tone} eyebrow="Why Saabi Solutions" title="Technical depth, business sense, straight talk" intro="The reasons clients stay with us after the first project.">
+    <Section tone={tone} eyebrow="Why Kliqq" title="Technical depth, business sense, straight talk" intro="The reasons clients stay with us after the first project.">
       <Grid />
     </Section>
   )
