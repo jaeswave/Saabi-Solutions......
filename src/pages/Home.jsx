@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero /><ClientsStrip /><TechMarquee /><WhatWeDo /><ServicesTeaser /><BuildSplit />
-      <FeaturedWork /><Stats /><SecuritySplit /><Cta />
+      <Stats /><SecuritySplit /><Cta />
     </>
   )
 }
