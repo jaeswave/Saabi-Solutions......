@@ -100,7 +100,7 @@ export default function Footer() {
             .join(" · ")}
         </p>
         <p className="mt-2">
-          © {new Date().getFullYear()} {site.name}. All rights reserved.
+          © 2020 {site.name}. All rights reserved.
         </p>
       </div>
     </footer>
