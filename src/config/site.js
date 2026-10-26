@@ -1,14 +1,13 @@
 export const site = {
   name: "Kliqq",
   domain: "kliqq.it.com",
-  email: "kliqqsolutions@gmail.com",
+  email: "info@kliqq.it.com",
 
   // Both phone numbers
   phones: ["+234 812 726 5813", "+234 802 244 0045"],
 
   // Both WhatsApp numbers (digits only, with country code)
   whatsapps: ["2348127265813", "2348022440045"],
-
   // Defaults used by CTAs / floating buttons
   primaryPhone: "+234 812 726 5813",
   primaryWhatsapp: "2348127265813",
