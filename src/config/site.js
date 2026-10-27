@@ -4,7 +4,7 @@ export const site = {
   email: "info@kliqq.it.com",
 
   // Both phone numbers
-  phones: ["+234 812 726 5813", "+234 802 244 0045"],
+  phones: ["+234 812 726 5813", "+234 8071939484"],
 
   // Both WhatsApp numbers (digits only, with country code)
   whatsapps: ["2348127265813", "2348022440045"],
