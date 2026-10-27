@@ -7,10 +7,10 @@ export const site = {
   phones: ["+234 812 726 5813", "+234 8071939484"],
 
   // Both WhatsApp numbers (digits only, with country code)
-  whatsapps: ["2348127265813", "2348022440045"],
+  whatsapps: ["+1 415 286-4560", "+234 8071939484", "+234 812 726 5813"],
   // Defaults used by CTAs / floating buttons
   primaryPhone: "+234 812 726 5813",
-  primaryWhatsapp: "2348127265813",
+  primaryWhatsapp: "+234 8071939484",
 
   location: "Lagos, Nigeria · Working worldwide",
 

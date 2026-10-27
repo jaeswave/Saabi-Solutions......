@@ -4,11 +4,20 @@ import { site } from "../../config/site.js";
 import { services } from "../../data/services.js";
 import Logo from "../ui/Logo.jsx";
 
-// Format a digits-only number into a readable phone string (best-effort)
-const prettyPhone = (raw) =>
-  raw.startsWith("234")
-    ? `+234 ${raw.slice(3, 6)} ${raw.slice(6, 9)} ${raw.slice(9)}`
-    : `+${raw}`;
+// Strip everything except digits
+const digitsOnly = (raw) => raw.replace(/\D/g, "");
+
+// Format digits into a readable phone string
+const prettyPhone = (raw) => {
+  const d = digitsOnly(raw);
+  if (d.startsWith("234") && d.length === 13) {
+    return `+234 ${d.slice(3, 6)} ${d.slice(6, 9)} ${d.slice(9)}`;
+  }
+  if (d.startsWith("1") && d.length === 11) {
+    return `+1 ${d.slice(1, 4)} ${d.slice(4, 7)} ${d.slice(7)}`;
+  }
+  return `+${d}`;
+};
 
 export default function Footer() {
   return (
@@ -56,32 +65,32 @@ export default function Footer() {
             {site.phones.map((p) => (
               <li key={p} className="flex gap-2">
                 <Phone size={16} className="mt-0.5 shrink-0 text-aqua" />
-                <a
-                  href={`tel:${p.replace(/\s+/g, "")}`}
-                  className="hover:text-white"
-                >
+                <a href={`tel:${digitsOnly(p)}`} className="hover:text-white">
                   {p}
                 </a>
               </li>
             ))}
 
-            {/* Both WhatsApp numbers */}
-            {site.whatsapps.map((w) => (
-              <li key={w} className="flex gap-2">
-                <MessageCircle
-                  size={16}
-                  className="mt-0.5 shrink-0 text-aqua"
-                />
-                <a
-                  href={`https://wa.me/${w}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white"
-                >
-                  WhatsApp: {prettyPhone(w)}
-                </a>
-              </li>
-            ))}
+            {/* WhatsApp numbers */}
+            {site.whatsapps.map((w) => {
+              const digits = digitsOnly(w);
+              return (
+                <li key={digits} className="flex gap-2">
+                  <MessageCircle
+                    size={16}
+                    className="mt-0.5 shrink-0 text-aqua"
+                  />
+                  <a
+                    href={`https://wa.me/${digits}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    WhatsApp: {prettyPhone(w)}
+                  </a>
+                </li>
+              );
+            })}
 
             {/* Location */}
             <li className="flex gap-2">
@@ -99,9 +108,7 @@ export default function Footer() {
             .map((s) => s.title)
             .join(" · ")}
         </p>
-        <p className="mt-2">
-          © 2020 {site.name}. All rights reserved.
-        </p>
+        <p className="mt-2">© 2020 {site.name}. All rights reserved.</p>
       </div>
     </footer>
   );
