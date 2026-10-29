@@ -19,8 +19,8 @@ const topics = [...services, ...solutions]
   .map((s) => s.title)
   .concat([
     "Turn my idea into a product",
-    "Saabi Academy (public class)",
-    "Saabi Academy (private training)",
+    "Kliqq Academy (public class)",
+    "Kliqq Academy (private training)",
     "Corporate training",
     "Something else",
   ]);
